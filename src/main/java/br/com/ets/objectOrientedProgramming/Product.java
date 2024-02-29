@@ -33,6 +33,11 @@ public class Product {
         return price - (price*discount);
     }
 
+    // sobrecarga
+    double calculatePriceWithDiscount(double aditionalDiscount){
+        return price - (price*(discount + aditionalDiscount));
+    }
+
     // %d - tipos inteiros - byte, short, int e long
     // %f - tipos reais - float e double
     // %c - tipos caractere - char
@@ -41,7 +46,7 @@ public class Product {
 
 
     String returnProductsInformations(){
-        return String.format("O produto %s está com o preço de R$%.1f e com o desconto de %.2f e o preço final fica em R$%.2f.", name, price, discount, calculatePriceWithDiscount());
+        return String.format("O produto %s está com o preço de R$%.1f e com o desconto de %.2f e o preço final fica em R$%.2f.", this.name, this.price, this.discount, calculatePriceWithDiscount());
     }
 
     void printName(){
